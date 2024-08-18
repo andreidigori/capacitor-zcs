@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorExample',
+      name: 'capacitorZcs',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },
