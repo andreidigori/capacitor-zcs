@@ -15,9 +15,12 @@ npx cap sync
 
 * [`getPrinterStatus()`](#getprinterstatus)
 * [`openPrinterBox()`](#openprinterbox)
-* [`print(...)`](#print)
+* [`printText(...)`](#printtext)
+* [`printBarCode(...)`](#printbarcode)
+* [`printQRCode(...)`](#printqrcode)
+* [`printImage(...)`](#printimage)
+* [`startPrint()`](#startprint)
 * [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
 </docgen-index>
@@ -45,15 +48,63 @@ openPrinterBox() => Promise<void>
 --------------------
 
 
-### print(...)
+### printText(...)
 
 ```typescript
-print(options: PrintOptions) => Promise<void>
+printText(options: PrintTextOptions) => Promise<void>
 ```
 
-| Param         | Type                                                  |
-| ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#printoptions">PrintOptions</a></code> |
+| Param         | Type                                                          |
+| ------------- | ------------------------------------------------------------- |
+| **`options`** | <code><a href="#printtextoptions">PrintTextOptions</a></code> |
+
+--------------------
+
+
+### printBarCode(...)
+
+```typescript
+printBarCode(options: PrintBarCodeOptions) => Promise<void>
+```
+
+| Param         | Type                                                                |
+| ------------- | ------------------------------------------------------------------- |
+| **`options`** | <code><a href="#printbarcodeoptions">PrintBarCodeOptions</a></code> |
+
+--------------------
+
+
+### printQRCode(...)
+
+```typescript
+printQRCode(options: PrintQRCodeOptions) => Promise<void>
+```
+
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#printqrcodeoptions">PrintQRCodeOptions</a></code> |
+
+--------------------
+
+
+### printImage(...)
+
+```typescript
+printImage(options: PrintImageOptions) => Promise<void>
+```
+
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code><a href="#printimageoptions">PrintImageOptions</a></code> |
+
+--------------------
+
+
+### startPrint()
+
+```typescript
+startPrint() => Promise<void>
+```
 
 --------------------
 
@@ -68,72 +119,48 @@ print(options: PrintOptions) => Promise<void>
 | **`value`** | <code>T</code> |
 
 
-#### PrintOptions
-
-| Prop                    | Type                                                            |
-| ----------------------- | --------------------------------------------------------------- |
-| **`defaultAlignment`**  | <code><a href="#zcsprintalignment">ZcsPrintAlignment</a></code> |
-| **`defaultTextFormat`** | <code><a href="#printtextformat">PrintTextFormat</a></code>     |
-| **`reverseColor`**      | <code>boolean</code>                                            |
-| **`items`**             | <code>PrintItem[]</code>                                        |
-
-
-#### PrintTextFormat
+#### PrintTextOptions
 
 | Prop                | Type                                                            |
 | ------------------- | --------------------------------------------------------------- |
+| **`content`**       | <code>string</code>                                             |
 | **`size`**          | <code>number</code>                                             |
+| **`underline`**     | <code>boolean</code>                                            |
 | **`scaleX`**        | <code>number</code>                                             |
 | **`letterSpacing`** | <code>number</code>                                             |
-| **`underline`**     | <code>boolean</code>                                            |
+| **`alignment`**     | <code><a href="#zcsprintalignment">ZcsPrintAlignment</a></code> |
 | **`style`**         | <code><a href="#zcsprinttextstyle">ZcsPrintTextStyle</a></code> |
 | **`font`**          | <code>string</code>                                             |
 
 
-#### PrintTextItem
-
-| Prop          | Type                |
-| ------------- | ------------------- |
-| **`type`**    | <code>'text'</code> |
-| **`content`** | <code>string</code> |
-
-
-#### PrintBarcodeItem
+#### PrintBarCodeOptions
 
 | Prop              | Type                                                                    |
 | ----------------- | ----------------------------------------------------------------------- |
-| **`type`**        | <code>'barcode'</code>                                                  |
 | **`content`**     | <code>string</code>                                                     |
 | **`width`**       | <code>number</code>                                                     |
 | **`height`**      | <code>number</code>                                                     |
 | **`displayCode`** | <code>boolean</code>                                                    |
+| **`alignment`**   | <code><a href="#zcsprintalignment">ZcsPrintAlignment</a></code>         |
 | **`format`**      | <code><a href="#zcsprintbarcodeformat">ZcsPrintBarcodeFormat</a></code> |
 
 
-#### PrintQrcodeItem
+#### PrintQRCodeOptions
 
-| Prop          | Type                  |
-| ------------- | --------------------- |
-| **`type`**    | <code>'qrcode'</code> |
-| **`content`** | <code>string</code>   |
-| **`width`**   | <code>number</code>   |
-| **`height`**  | <code>number</code>   |
-
-
-#### PrintImageItem
-
-| Prop             | Type                 |
-| ---------------- | -------------------- |
-| **`type`**       | <code>'image'</code> |
-| **`assetsPath`** | <code>string</code>  |
+| Prop            | Type                                                            |
+| --------------- | --------------------------------------------------------------- |
+| **`content`**   | <code>string</code>                                             |
+| **`width`**     | <code>number</code>                                             |
+| **`height`**    | <code>number</code>                                             |
+| **`alignment`** | <code><a href="#zcsprintalignment">ZcsPrintAlignment</a></code> |
 
 
-### Type Aliases
+#### PrintImageOptions
 
-
-#### PrintItem
-
-<code><a href="#printtextitem">PrintTextItem</a> | <a href="#printbarcodeitem">PrintBarcodeItem</a> | <a href="#printqrcodeitem">PrintQrcodeItem</a> | <a href="#printimageitem">PrintImageItem</a> | string</code>
+| Prop             | Type                                                            |
+| ---------------- | --------------------------------------------------------------- |
+| **`assetsPath`** | <code>string</code>                                             |
+| **`alignment`**  | <code><a href="#zcsprintalignment">ZcsPrintAlignment</a></code> |
 
 
 ### Enums
