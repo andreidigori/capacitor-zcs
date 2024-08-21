@@ -1,6 +1,6 @@
 # capacitor-zcs
 
-fds
+CapacitorJS wrapper for ZCS SDK.
 
 ## Install
 
