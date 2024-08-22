@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# For ZCS
+
+-keep class com.zcs.base.SmartPosJni{*;}
+-keep class com.zcs.sdk.DriverManager{*;}
+-keep class com.zcs.sdk.emv.**{*;}
