@@ -4,8 +4,21 @@ CapacitorJS wrapper for ZCS SDK.
 
 ## Install
 
+To use npm
+
 ```bash
 npm install capacitor-zcs
+````
+
+To use yarn
+
+```bash
+yarn add capacitor-zcs
+```
+
+Sync native files
+
+```bash
 npx cap sync
 ```
 
